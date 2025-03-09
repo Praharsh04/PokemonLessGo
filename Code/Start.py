@@ -72,7 +72,8 @@ def select_town():
 
 
 
- # 1 to 1:30 calenderr preparing
+
+ 
 
 
     

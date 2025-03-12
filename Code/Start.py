@@ -5,6 +5,7 @@ def Game():
     city_name, trainer_name = city()
     Explore(city_name,trainer_name)
 
+cash = 0
 def update_cash(amount, transaction_type):
     global cash
 
@@ -17,7 +18,20 @@ def update_cash(amount, transaction_type):
     elif transaction_type == "earn":
         cash += amount
         print(f"Earned ${amount}! Current balance: ${cash}")
+bag = {}
+def update_bag(bag, item, quantity):
+    if item in bag:
+        bag[item] += quantity
+    else:
+        bag[item] = quantity
+def use_bag_item(bag, item, quantity):
+    if item in bag and bag[quantity] >= 1:
+        bag[item] -= quantity
+        
+    else:
+        print("Item not available")
 
+    
 
 def start():
     import time
@@ -52,6 +66,10 @@ def choose_first_pokemon():
     print(f"Bravo! {f_name} is your Buddy now")
     time.sleep(1)
     print(f"{f_name} is {f_type} type, {f_name}")
+    print(f"Best of luck for your pokemon journey1")
+    print("Recived $1500 cash from proffessor Oak,")
+    update_cash(amount=1500, transaction_type="earn")
+    print("")
     
 def city():
     print("Where you want to head towards")
